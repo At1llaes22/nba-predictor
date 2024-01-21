@@ -11,7 +11,15 @@ body{
 
 
 h1 {
-    color: blue;
+    color: #F5F7FA;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Medium 16 */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 162.5% */
 }
 
 .topContainer{

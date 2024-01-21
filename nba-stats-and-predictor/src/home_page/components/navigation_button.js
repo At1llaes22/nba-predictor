@@ -6,6 +6,7 @@ const NavigationButton = ({ title, text }) => {
         <div className="buttonContainer">
             <div className="iconContainer">
                 
+                
             </div>
             <div className="titleContainer">
                 <h1>{title}</h1>

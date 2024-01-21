@@ -9,10 +9,10 @@ const HomePage = () => {
         
             <div className='topContainer'>
                 <div className='logoContainer'>
-                    <img src="https://picsum.photos/200/300"  />
+                    <img src="https://picsum.photos/200/300" alt="ss" />
                 </div>
                 <div className='photoContainer'>
-                    <img src="https://picsum.photos/200/300"  />
+                    <img src="https://picsum.photos/200/300" alt="ss" />
                     <div className='textContainer'>
                         <h1>Welcome to My Homepage</h1>
                         <p>This is the homepage of my first React app.</p>
