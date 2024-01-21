@@ -1,19 +1,30 @@
 import React from "react";
 import "./navigation_button.css";
+import { useNavigate } from 'react-router-dom';
+import "../HomePage.css";
+    
 
-const NavigationButton = ({ title, text }) => {
+
+
+const NavigationButton = ({ title, text, OptionIcon }) => {
+    const navigate = useNavigate();
+    
     return (
-        <div className="buttonContainer">
+        <div className="buttonContainer" onClick={() => navigate("/home")}>
+        
             <div className="iconContainer">
-                
-                
+           {OptionIcon}
+
             </div>
+            <div className="textparent">
             <div className="titleContainer">
-                <h1>{title}</h1>
+                <h3>{title}</h3>
             </div>
             <div className="textContainer">
-                <h2>{text}</h2>
+                <h4>{text}</h4>
             </div>
+            </div>
+            
 
         </div>
     );

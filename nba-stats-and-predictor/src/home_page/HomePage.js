@@ -1,9 +1,11 @@
 import React from 'react';
 import './HomePage.css';
 import NavigationButton from './components/navigation_button';
+import { GiBasketballJersey } from "react-icons/gi";
 
 
 const HomePage = () => {
+    const iconSize = 48;
     return (
         <div className='container'>
         
@@ -20,7 +22,12 @@ const HomePage = () => {
                 </div>
                 
             </div>
-            <NavigationButton className="navbutton" text={"test"} title={"title"}></NavigationButton>
+            <div className='navButtons'>
+            <NavigationButton className="navbutton" text={"This page contains player stats info, click to continue."} title={"Player Stats"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
+            <NavigationButton className="navbutton" text={"test"} title={"This"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
+            <NavigationButton className="navbutton" text={"test"} title={"title"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
+            </div>
+           
                 
         </div>
         

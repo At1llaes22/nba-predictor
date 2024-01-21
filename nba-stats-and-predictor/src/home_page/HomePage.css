@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body{
     width: 100%;
@@ -12,14 +13,7 @@ body{
 
 h1 {
     color: #F5F7FA;
-    font-feature-settings: 'clig' off, 'liga' off;
-
-    /* Medium 16 */
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 26px; /* 162.5% */
+   
 }
 
 .topContainer{
@@ -51,5 +45,14 @@ h1 {
 .navbutton{
     width: 100%;
     height: 20px;
+   
+}
+.navButtons{
+    display: flex;
+    flex-direction: row;
+    
+    border:1px solid blue;
+    justify-content: space-around;
+    margin: 108px 20px;
 }
 

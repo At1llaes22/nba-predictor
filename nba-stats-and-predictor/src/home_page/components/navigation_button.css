@@ -1,0 +1,54 @@
+h3{
+    color: white;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Medium 16 */
+    
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px; /* 162.5% */
+}
+
+h4{
+    color: white;
+   
+
+    /* Medium 16 */
+    
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    opacity: 0.5
+    ;
+    line-height: 26px; /* 162.5% */
+}
+.buttonContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid red;
+    width: fit-content;
+    height: fit-content;
+    min-width: 200px;
+    
+    cursor: pointer;
+   
+}
+.textparent{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px 6px;
+}
+.textparent .textContainer{
+
+   
+    padding: 0px 2px;
+}
+
+.iconContainer{
+    color: blueviolet;
+}
