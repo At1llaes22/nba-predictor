@@ -6,11 +6,11 @@ import "../HomePage.css";
 
 
 
-const NavigationButton = ({ title, text, OptionIcon }) => {
+const NavigationButton = ({ title, text, OptionIcon, path }) => {
     const navigate = useNavigate();
     
     return (
-        <div className="buttonContainer" onClick={() => navigate("/home")}>
+        <div className="buttonContainer" onClick={() => navigate(path)}>
         
             <div className="iconContainer">
            {OptionIcon}

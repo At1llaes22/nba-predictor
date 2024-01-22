@@ -23,7 +23,7 @@ const HomePage = () => {
                 
             </div>
             <div className='navButtons'>
-            <NavigationButton className="navbutton" text={"This page contains player stats info, click to continue."} title={"Player Stats"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
+            <NavigationButton className="navbutton" text={"This page contains player stats info, click to continue."} title={"Player Stats"} path={"/player-stats"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
             <NavigationButton className="navbutton" text={"test"} title={"This"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
             <NavigationButton className="navbutton" text={"test"} title={"title"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
             </div>
