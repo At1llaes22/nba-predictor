@@ -11,11 +11,17 @@ function PlayerStatsPage(){
                 <h1>PLAYER STATS OF 2023-2024 SEASON</h1>
             </div>
             <div className="tableContainer">
+            
             <table>
-                {Object.values(data).map((value, index) => (
+            {Object.values(data).map((value, index) => (
+                    
+                 <th >ss</th>
+                    ))} 
+              
+                 {Object.values(data).map((value, index) => (
                     
                     <PlayerTableRow key={index} data={value} />
-                    ))}
+                    ))} 
 
                 
             </table>

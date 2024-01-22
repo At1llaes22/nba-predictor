@@ -9,13 +9,18 @@ body{
     height: 100vh;
     background: linear-gradient(rgba(19, 14, 14, 0.734),rgba(0, 0, 0, 0.827) );
 }
-table, th, td {
-    border: 1px solid white;
-    text-decoration-color: white;
-  }
+
 
 .header{
     height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.header h1{
+    color: wheat;
+    text-shadow: 3px 4px rgba(0, 0, 0, 0.6);
 }
 table { /* Set the height of table body */ 
  
@@ -32,4 +37,8 @@ table { /* Set the height of table body */
     overflow-y: auto;
     overflow-x: auto;
      
+}
+
+table{ 
+    table-layout: fixed;
 }
