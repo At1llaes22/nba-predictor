@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    
 }
 body{
     width: 100%;
     height: 100vh;
     background: linear-gradient(rgba(19, 14, 14, 0.734),rgba(0, 0, 0, 0.827) );
+    
 }
 
 
@@ -21,8 +24,9 @@ body{
 .header h1{
     color: wheat;
     text-shadow: 3px 4px rgba(0, 0, 0, 0.6);
+    font-family: "Roboto", sans-serif;
 }
-table { /* Set the height of table body */ 
+.myTable { /* Set the height of table body */ 
  
   
     
@@ -36,9 +40,35 @@ table { /* Set the height of table body */
     max-height: 90vh;
     overflow-y: auto;
     overflow-x: auto;
+    padding: 0px;
+    margin: 0px;
+    
+    
+
+    
      
 }
 
-table{ 
+.myTable{ 
     table-layout: fixed;
+    padding: 0px;
+    margin: 0px;
+
+    
+}
+
+th{
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+    
+    padding-right: 10px;
+    padding-left: 2px;
+    padding-bottom: 10px;
+    padding-top: 6px;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    
+    color: rgba(240, 236, 228, 0.7);
 }
