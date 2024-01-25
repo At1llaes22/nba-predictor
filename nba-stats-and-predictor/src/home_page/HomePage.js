@@ -2,19 +2,22 @@ import React from 'react';
 import './HomePage.css';
 import NavigationButton from './components/navigation_button';
 import { GiBasketballJersey } from "react-icons/gi";
+import logo from '../assets/Logo-NBA.png';
+import logo2 from '../assets/wade-bron.jpg';
+import playerLogo from '../assets/player-stats-logo.jpg';
 
 
 const HomePage = () => {
     const iconSize = 48;
     return (
         <div className='container'>
-        
+
             <div className='topContainer'>
                 <div className='logoContainer'>
-                    <img src="https://picsum.photos/200/300" alt="ss" />
+                    <img src={logo} alt="ss" />
                 </div>
                 <div className='photoContainer'>
-                    <img src="https://picsum.photos/200/300" alt="ss" />
+                    <img src={logo2} alt="ss" />
                     <div className='textContainer'>
                         <h1>Welcome to My Homepage</h1>
                         <p>This is the homepage of my first React app.</p>
@@ -22,11 +25,14 @@ const HomePage = () => {
                 </div>
                 
             </div>
-            <div className='navButtons'>
-            <NavigationButton className="navbutton" text={"This page contains player stats info, click to continue."} title={"Player Stats"} path={"/player-stats"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
-            <NavigationButton className="navbutton" text={"test"} title={"This"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
-            <NavigationButton className="navbutton" text={"test"} title={"title"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
+            <div className="bottomContainer">
+                <div className='navButtons'>
+                    <NavigationButton className="navbutton" text={"This page contains player stats info, click to continue."} title={"Player Stats"} path={"/player-stats"} OptionIcon={playerLogo}></NavigationButton>
+                    <NavigationButton className="navbutton" text={"test"} title={"This"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
+                    <NavigationButton className="navbutton" text={"test"} title={"title"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
+                </div>
             </div>
+           
            
                 
         </div>
