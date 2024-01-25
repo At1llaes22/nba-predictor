@@ -1,0 +1,15 @@
+th{
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+    
+    padding-right: 10px;
+    padding-left: 2px;
+    padding-bottom: 10px;
+    padding-top: 6px;
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    
+    color: rgba(240, 236, 228, 0.7);
+}

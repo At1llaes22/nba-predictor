@@ -1,67 +1,57 @@
-import React, { useState } from "react"; 
+import React, { useState, useEffect } from "react"; 
 
 import "./player_stats_page.css"
 import data from "./data_original_nba.json";
 import PlayerTableRow from "./components/player_table_row";
 import { Table } from "react-bootstrap";
+import TableHeader from "./components/table_header";
 
 
 function PlayerStatsPage(){
     //console.log(data);
+    const [isLoading, setIsLoading] = useState(false);
     const initData = Object.values(data).map((value, index) => (data[index]));                      
-    const [sort_Order, set_Sort_Order] = useState("des"); 
+    const [sort_Order, set_Sort_Order] = useState("asc"); 
     const [tabData, setTabData] = useState(initData);
     const [sortVar, setSortVar] = useState("PPG");
 
     const sortFunction = (f) => { 
-        // if (f === "age") { 
-        //     if (sort_Age === "age") { 
-        //         set_Sort_Order(sort_Order === "asc" ? "desc" : "asc"); 
-        //         set_Sort_Msg( 
-        //             `Table is Sorted in ${sort_Order ===  
-        //                 "asc" ? "Ascending" : "Descending"
-        //             } Order` 
-        //         ); 
-        //     } else { 
-        //         set_Sort_Age("age"); 
-        //         set_Sort_Order("asc"); 
-        //         set_Sort_Msg(`Table is Sorted in Descending Order`); 
-        //     } 
-        // } else { 
-        //     set_Sort_Msg("Sorting is disabled for this column"); 
-        // } 
+        setIsLoading(true);
         const sorted = [...tabData].sort((a, b) => { 
-            const multi = sort_Order === "asc" ? 1 : -1; 
+            const multi = sort_Order === "asc" ? -1 : 1; 
              return multi * (a[f] - b[f]); 
          }); 
-        //console.log(sorted);
+         setIsLoading(false);
         setTabData(sorted); 
         //console.log(tabData);
     }; 
    
     function headerOnclick(headerName) {
-        if(sort_Order === "asc" ){
-            set_Sort_Order("des")
-        }
-        else{
-            set_Sort_Order("asc")
-        }
+        
+        
+        
         resetSort(headerName);
-        sortFunction(headerName);
+        
     }
 
     function resetSort(headerName) {
         if(headerName === sortVar){
-            return;
+            console.log("22");
+            set_Sort_Order(currentSortOrder => currentSortOrder === "asc" ? "des" : "asc");
         }
         else{
             setSortVar(headerName);
-            set_Sort_Order("des");
+            set_Sort_Order("asc");
         }
         
         
-        
     }
+    useEffect(() => {
+        // This will run whenever sortVar or sort_Order changes
+        sortFunction(sortVar);
+        console.log(sortVar);
+        console.log(sort_Order);
+    }, [sortVar, sort_Order, isLoading]);
     
     return (
         
@@ -69,14 +59,15 @@ function PlayerStatsPage(){
         <div className="container">
             <div className="header">
                 <h1>PLAYER STATS OF 2023-2024 SEASON</h1>
+                {isLoading ? <h1>Loading...</h1> : null}
             </div>
             <div className="tableContainer">
             
                 <Table className="myTable">
-                    {Object.keys(data[0]).map((key, index) => (
-                            
-                        <th key={index} onClick={() => headerOnclick(key)}>{key} 
-                        </th>
+                
+                    {Object.keys(data[0]).map((name, index) => (
+                            <TableHeader key={index} name={name} headerOnclick={headerOnclick}></TableHeader>
+                        
                             ))} 
                     
                                 {Object.values(tabData).map((value, index) => (
