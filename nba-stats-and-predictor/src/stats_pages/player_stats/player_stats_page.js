@@ -16,22 +16,29 @@ function PlayerStatsPage(){
     const [sortVar, setSortVar] = useState("PPG");
 
     const sortFunction = (f) => { 
+        
+    
         setIsLoading(true);
-        const sorted = [...tabData].sort((a, b) => { 
-            const multi = sort_Order === "asc" ? -1 : 1; 
-             return multi * (a[f] - b[f]); 
-         }); 
-         setIsLoading(false);
-        setTabData(sorted); 
-        //console.log(tabData);
-    }; 
+        setTimeout(() => {
+            const sorted = [...tabData].sort((a, b) => { 
+                const multi = sort_Order === "asc" ? -1 : 1; 
+                return multi * (a[f] - b[f]); 
+            }); 
+    
+            setTabData(sorted);
+             
+        }, 250); // .25 second delay
+        setIsLoading(false);
+    };
    
     function headerOnclick(headerName) {
         
         
-        
+        setIsLoading(true);
+      
         resetSort(headerName);
         
+
     }
 
     function resetSort(headerName) {
@@ -51,12 +58,13 @@ function PlayerStatsPage(){
         sortFunction(sortVar);
         console.log(sortVar);
         console.log(sort_Order);
-    }, [sortVar, sort_Order, isLoading]);
+        
+    }, [sortVar, sort_Order]);
     
     return (
         
         
-        <div className="container">
+        <div className="player-stats">
             <div className="header">
                 <h1>PLAYER STATS OF 2023-2024 SEASON</h1>
                 {isLoading ? <h1>Loading...</h1> : null}
@@ -64,13 +72,17 @@ function PlayerStatsPage(){
             <div className="tableContainer">
             
                 <Table className="myTable">
-                
+                    <thead>
+                    <tr>
                     {Object.keys(data[0]).map((name, index) => (
-                            <TableHeader key={index} name={name} headerOnclick={headerOnclick}></TableHeader>
+                            <TableHeader key={index} name={name} headerOnclick={headerOnclick} currentSort={sortVar} sortOrder={sort_Order} isLoading={isLoading}></TableHeader>
                         
-                            ))} 
+                            ))}
+                    </tr>
                     
-                                {Object.values(tabData).map((value, index) => (
+                    </thead>
+                    
+                    {Object.values(tabData).map((value, index) => (
                             
                                     <PlayerTableRow key={index} data={value} />
                             ))} 

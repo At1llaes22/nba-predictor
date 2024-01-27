@@ -1,14 +1,16 @@
 import React from 'react';
 import './HomePage.css';
 import NavigationButton from './components/navigation_button';
-import { GiBasketballJersey } from "react-icons/gi";
+
 import logo from '../assets/Logo-NBA.png';
 import logo2 from '../assets/wade-bron.jpg';
 import playerLogo from '../assets/player-stats-logo.jpg';
+import teamsLogo from '../assets/nba-teams-logo.jpg';
+import upcomingLogo from '../assets/upcoming-games-logo.avif';
 
 
 const HomePage = () => {
-    const iconSize = 48;
+    
     return (
         <div className='container'>
 
@@ -28,8 +30,8 @@ const HomePage = () => {
             <div className="bottomContainer">
                 <div className='navButtons'>
                     <NavigationButton className="navbutton" text={"This page contains player stats info, click to continue."} title={"Player Stats"} path={"/player-stats"} OptionIcon={playerLogo}></NavigationButton>
-                    <NavigationButton className="navbutton" text={"test"} title={"This"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
-                    <NavigationButton className="navbutton" text={"test"} title={"title"} OptionIcon={<GiBasketballJersey size={iconSize}/>}></NavigationButton>
+                    <NavigationButton className="navbutton" text={"This page contains team stats info, click to continue."} title={"Team Stats"} OptionIcon={teamsLogo}></NavigationButton>
+                    <NavigationButton className="navbutton" text={"This page contains upcoming games info, click to continue."} title={"Upcoming Games"} OptionIcon={upcomingLogo}></NavigationButton>
                 </div>
             </div>
            

@@ -1,30 +1,36 @@
 h3{
-    color: white;
+    color: wheat;
     font-feature-settings: 'clig' off, 'liga' off;
 
-    /* Medium 16 */
-    z-index: 2;
+    z-index: 100;
     font-size: 26px;
     font-style: normal;
     font-weight: 700;
+    text-shadow: 1.5px 1.5px 2px rgba(139, 41, 18, 0.562);
     line-height: 26px; /* 162.5% */
 }
+.titleContainer{
+    margin-top: 20px;
+    position: relative;
+    
+}
 
+.textContainer{
+    margin-top: 10px;
+}
 h4{
-    color: white;
+    color: rgba(255, 255, 255, 0.63);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    opacity: 0.5
-    ;
+    opacity: 0.9;
     line-height: 26px; /* 162.5% */
 }
 .buttonContainer{
     background-color: rgba(0, 0, 0, 0.296);
     display:flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start; 
+    align-items: center;
     border-radius: 24px;
     overflow: hidden;
     width: 200px;
@@ -32,11 +38,19 @@ h4{
     cursor: pointer;
    
 }
+
+.buttonContainer:hover h4{
+   color: rgba(255, 255, 255, 0.916);
+   
+}
+
+
+
 .textparent{
     display:flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 0px 6px;
 }
 .textparent .textContainer{
@@ -52,10 +66,12 @@ h4{
     overflow: hidden;
 }
 
-.iconContainer img{
+.iconContainer {
     filter: grayscale(100%);
    
 }
-.iconContainer img:hover{
-    filter: grayscale(50%);
+
+.buttonContainer:hover .iconContainer{
+    filter: grayscale(45%);
+   
 }

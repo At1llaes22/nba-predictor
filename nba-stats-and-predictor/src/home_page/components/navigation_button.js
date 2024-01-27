@@ -2,7 +2,7 @@ import React from "react";
 import "./navigation_button.css";
 import { useNavigate } from 'react-router-dom';
 import "../HomePage.css";
-import playerLogo from '../../assets/player-stats-logo.jpg';
+
 
     
 
@@ -15,16 +15,16 @@ const NavigationButton = ({ title, text, OptionIcon, path }) => {
         <div className="buttonContainer" onClick={() => navigate(path)}>
            
             <div className="iconContainer">
-            <img src={playerLogo} alt="ss" />
+            <img src={OptionIcon} alt="ss" />
 
             </div>
             <div className="textparent">
-            <div className="titleContainer">
-                <h3>{title}</h3>
-            </div>
-            <div className="textContainer">
-                <h4>{text}</h4>
-            </div>
+                <div className="titleContainer">
+                    <h3>{title}</h3>
+                </div>
+                <div className="textContainer">
+                    <h4>{text}</h4>
+                </div>
             </div>
             
 
