@@ -30,7 +30,7 @@ const HomePage = () => {
             <div className="bottomContainer">
                 <div className='navButtons'>
                     <NavigationButton className="navbutton" text={"This page contains player stats info, click to continue."} title={"Player Stats"} path={"/player-stats"} OptionIcon={playerLogo}></NavigationButton>
-                    <NavigationButton className="navbutton" text={"This page contains team stats info, click to continue."} title={"Team Stats"} OptionIcon={teamsLogo}></NavigationButton>
+                    <NavigationButton className="navbutton" text={"This page contains team stats info, click to continue."} title={"Team Stats"} path={"/team-stats"} OptionIcon={teamsLogo}></NavigationButton>
                     <NavigationButton className="navbutton" text={"This page contains upcoming games info, click to continue."} title={"Upcoming Games"} OptionIcon={upcomingLogo}></NavigationButton>
                 </div>
             </div>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"; 
 
-import "./player_stats_page.css"
-import data from "./data_original_nba.json";
-import PlayerTableRow from "./components/player_table_row";
+import "./team_stats_page.css"
+import data from "./team_data.json";
+import PlayerTableRow from "../player_stats/components/player_table_row";
 import { Table } from "react-bootstrap";
-import TableHeader from "./components/table_header";
+import TableHeader from "../player_stats/components/table_header";
 
 
-function PlayerStatsPage(){
+function TeamStatsPage(){
     //console.log(data);
     const [isLoading, setIsLoading] = useState(false);
     const initData = Object.values(data).map((value, index) => (data[index]));                      
@@ -18,7 +18,7 @@ function PlayerStatsPage(){
     const sortFunction = (f) => { 
         
     
-       
+        setIsLoading(true);
         setTimeout(() => {
             const sorted = [...tabData].sort((a, b) => { 
                 const multi = sort_Order === "asc" ? -1 : 1; 
@@ -27,7 +27,7 @@ function PlayerStatsPage(){
     
             setTabData(sorted);
              
-        }, 1000); // .25 second delay
+        }, 250); // .25 second delay
         setIsLoading(false);
     };
    
@@ -56,9 +56,6 @@ function PlayerStatsPage(){
     useEffect(() => {
         // This will run whenever sortVar or sort_Order changes
         sortFunction(sortVar);
-        console.log(sortVar);
-        console.log(sort_Order);
-        
     }, [sortVar, sort_Order]);
     
     return (
@@ -84,7 +81,7 @@ function PlayerStatsPage(){
                     
                     {Object.values(tabData).map((value, index) => (
                             
-                                    <PlayerTableRow key={index} data={value} index={index} />
+                                    <PlayerTableRow key={index} data={value} index={index}/>
                             ))} 
 
                     
@@ -100,4 +97,4 @@ function PlayerStatsPage(){
 
 
 
-export default PlayerStatsPage;
+export default TeamStatsPage;
